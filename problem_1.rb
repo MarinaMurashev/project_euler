@@ -2,12 +2,5 @@
 # get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the 
 # multiples of 3 or 5 below 1000.
 
-sum_of_numbers = 0
 
-(0..999).each do |number|
-  if number % 3 == 0 || number % 5 == 0
-    sum_of_numbers += number
-  end
-end
-
-puts sum_of_numbers
+puts (0..999).select { |number| number % 3 == 0 || number % 5 == 0 }.reduce(:+)
